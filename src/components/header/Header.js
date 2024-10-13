@@ -15,6 +15,7 @@ import {
   AuthorizationCon,
   LanguageCon,
   NavCon,
+  Rectangle3,
 } from './headerStyles';
 
 const Header = () => {
@@ -42,6 +43,7 @@ const Header = () => {
         <Span>Category</Span>
         <Span>Contact</Span>
       </NavCon>
+      <Rectangle3></Rectangle3>
       <AuthorizationCon>
         <Button>Join the community</Button>
         <LanguageCon>

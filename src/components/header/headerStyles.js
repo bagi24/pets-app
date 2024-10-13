@@ -11,7 +11,8 @@ export const HeaderContainer = styled.div`
 
 export const NavCon = styled.div`
   display: flex;
-
+  position: relative;
+  z-index: 1001;
   align-items: center;
   justify-content: flex-start;
   gap: 48px;
@@ -110,4 +111,17 @@ export const LanguageCon = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const Rectangle3 = styled.div`
+  width: 635px;
+  height: 635px;
+  position: absolute;
+  top: -570px;
+  left: -240px;
+  border-radius: 0px 99px 99px 0px;
+  opacity: 1;
+  background-color: #f7dba7;
+  transform: rotate(23deg);
+  z-index: 1000;
 `;

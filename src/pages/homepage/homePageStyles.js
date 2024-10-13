@@ -10,4 +10,6 @@ export const HomePageConStructure = styled.div`
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 `;
