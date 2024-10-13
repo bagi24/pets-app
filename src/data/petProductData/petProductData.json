@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Reflex Plus Adult Cat Food",
+    "flavor": "Salmon",
+    "type": "Dog Food",
+    "size": "385gm",
+    "price": "140.000 USD",
+    "gift": "Free Toy & Free Shaker"
+  },
+  {
+    "name": "Royal Canin Size Health Nutrition",
+    "flavor": "Chicken",
+    "type": "Dog Food",
+    "size": "2kg",
+    "price": "350.000 USD",
+    "gift": "Free Water Bottle"
+  },
+  {
+    "name": "Hill's Science Diet",
+    "flavor": "Lamb",
+    "type": "Dog Food",
+    "size": "1.5kg",
+    "price": "220.000 USD",
+    "gift": "Free Training Guide"
+  },
+  {
+    "name": "Purina Pro Plan",
+    "flavor": "Beef",
+    "type": "Dog Food",
+    "size": "500gm",
+    "price": "85.000 USD",
+    "gift": "Free Bowl"
+  },
+  {
+    "name": "Acana Singles + Wholesome Grains",
+    "flavor": "Duck",
+    "type": "Dog Food",
+    "size": "1kg",
+    "price": "180.000 USD",
+    "gift": "Free Treats"
+  }
+]
