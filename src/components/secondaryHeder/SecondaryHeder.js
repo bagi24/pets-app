@@ -16,10 +16,9 @@ import {
   AuthorizationCon,
   LanguageCon,
   NavCon,
-  Rectangle3,
-} from './headerStyles';
+} from './secondaryHeaderStyles';
 
-const Header = () => {
+const SecondaryHeder = () => {
   const navigate = useNavigate();
   const [language, setLanguage] = useState({
     flag: georgianFlag,
@@ -49,7 +48,7 @@ const Header = () => {
         <Span>Category</Span>
         <Span>Contact</Span>
       </NavCon>
-      <Rectangle3></Rectangle3>
+
       <AuthorizationCon>
         <Button onClick={handleJoin}>Join the community</Button>
         <LanguageCon>
@@ -77,4 +76,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SecondaryHeder;
