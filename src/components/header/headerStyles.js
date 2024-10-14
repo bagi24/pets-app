@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
   max-width: 1440px;
   width: 100%;
   gap: 404px;
+  background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
 `;
 
 export const NavCon = styled.div`

@@ -7,9 +7,9 @@ export const HeroContainer = styled.div`
   width: 100%;
   height: 595px;
   border-radius: 0px 0px 40px 40px;
-
   position: relative;
   overflow: hidden;
+  background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
 `;
 
 export const ContentContainer = styled.div`
