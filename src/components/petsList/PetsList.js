@@ -46,7 +46,7 @@ const PetsList = () => {
                 <Dot>
                   <i class='fa-solid fa-circle'></i>
                 </Dot>
-                <Age> Age: {pet.age} months </Age>
+                <Age> Age: {pet.age} </Age>
               </PetInfo>
 
               <Price>{pet.price}</Price>

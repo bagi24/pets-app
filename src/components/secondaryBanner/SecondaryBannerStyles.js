@@ -1,57 +1,63 @@
 import styled from 'styled-components';
 
-export const HeroContainer = styled.div`
+export const SecondaryBannerCon = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 595px;
-  border-radius: 0px 0px 40px 40px;
+  width: 1240px;
+  height: 378px;
+  background-color: #003459;
+  border-radius: 20px;
+
+  margin: 36px 130px 60px 130px;
   position: relative;
+
   overflow: hidden;
-  background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
 `;
 
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  padding: 80px 0px 0px 130px;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 130px;
   width: 100%;
+  z-index: 1001;
 `;
 
 export const Title = styled.h1`
   font-family: 'SVN-Gilroy';
-  font-size: 60px;
+  font-size: 52px;
   font-weight: 800;
   line-height: 68px;
   margin: 0px;
   position: relative;
-  color: #002a48;
+  color: #003459;
 `;
 
 export const Subtitle = styled.h2`
   font-family: 'SF Pro Display';
-  font-size: 46px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 60px;
   margin: 0px;
   margin-bottom: 4px;
-  color: #000000;
+  color: #003459;
 `;
 
 export const Description = styled.p`
   max-width: 480px;
   font-family: 'SF Pro Display';
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 18px;
   text-align: left;
   margin: 0px;
   margin-bottom: 34px;
   color: #242b33;
+
+  width: 394px;
+  height: 54px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -105,98 +111,37 @@ export const ButtonSec = styled.button`
 `;
 
 export const LogoImage = styled.img`
-  width: 944px;
-  height: 650px;
+  width: 513px;
+  height: 342px;
+
   position: absolute;
-  top: -15px;
-  left: 500px;
+  top: 38px;
+  left: 0px;
   z-index: 1001;
 `;
 
-export const Rectangle1 = styled.div`
-  width: 635px;
+export const Rectangle = styled.div`
+  width: 782.29px;
   height: 635px;
   position: absolute;
-  top: 195px;
-  left: 675px;
-  border-radius: 0px 99px 99px 0px;
+  top: -180px;
+  left: 630px;
+  border-radius: 99px;
   opacity: 1;
-  background-color: #f7dba7;
-  transform: rotate(-63deg);
+  background-color: #fceed5;
+  transform: rotate(-150deg);
   z-index: 1000;
 `;
 
 export const Rectangle2 = styled.div`
-  width: 635px;
-  height: 635px;
+  width: 787.54px;
+  height: 787.54px;
   position: absolute;
-  top: 220px;
-  left: 600px;
+  top: 190px;
+  left: -180px;
   border-radius: 99px;
   opacity: 1;
-  background-color: #003459;
-  transform: rotate(-78deg);
-`;
-
-export const Rectangle4 = styled.div`
-  width: 67px;
-  height: 67px;
-  position: absolute;
-  top: 80px;
-  left: 120px;
-  border-radius: 20px;
-  opacity: 1;
-  background-color: #f7dba7;
-  transform: rotate(-58deg);
-`;
-
-export const Rectangle5 = styled.div`
-  width: 535px;
-  height: 635px;
-  position: absolute;
-  top: 530px;
-  left: 100px;
-  border-radius: 99px;
-  opacity: 1;
-  background-color: #f7dba7;
-  transform: rotate(-35deg);
-  opacity: 40%;
-`;
-
-export const Rectangle6 = styled.div`
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  top: 110px;
-  left: 700px;
-  border-radius: 6px;
-  opacity: 1;
-  background-color: #003459;
-  transform: rotate(-45deg);
+  background-color: #002a48;
+  transform: rotate(-60deg);
   z-index: 1000;
-`;
-
-export const Rectangle7 = styled.div`
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: 100px;
-  left: 700px;
-  border-radius: 9px;
-  opacity: 1;
-  background-color: #f7dba7;
-  transform: rotate(-25deg);
-  z-index: 999;
-`;
-
-export const Rectangle8 = styled.div`
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  top: 55px;
-  left: 730px;
-  border-radius: 4px;
-  opacity: 1;
-  background-color: #f7dba7;
-  transform: rotate(-50deg);
 `;
