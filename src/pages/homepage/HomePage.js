@@ -9,6 +9,7 @@ import PetSellers from '../../components/petSellers/PetSellers';
 import ThirdBanner from '../../components/thirdBanner/ThirdBanner';
 import AboutPets from '../../components/aboutPets/AboutPets';
 import Timer from '../../components/timer/Timer';
+import Footer from '../../components/footer/Footer';
 import { HomePageConStructure } from './homePageStyles';
 
 const HomePage = () => {
@@ -23,6 +24,7 @@ const HomePage = () => {
       <ThirdBanner />
       <AboutPets />
       <Timer />
+      <Footer />
     </HomePageConStructure>
   );
 };
