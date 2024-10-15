@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/category' element={<Category />} />
-        <Route path='/productdetail' element={<ProductDetail />} />
+        <Route path='/productdetail/:id' element={<ProductDetail />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SingUp />} />
         <Route path='/RecoveryPassword' element={<RecoveryPassword />} />
