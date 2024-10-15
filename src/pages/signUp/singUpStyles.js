@@ -85,6 +85,21 @@ export const InputCon = styled.div`
   width: 100%;
   gap: 16px;
 `;
+export const NameInput = styled.input.attrs({
+  type: 'text',
+  placeholder: 'Name',
+})`
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+
+  &:focus {
+    border-color: #0077cc;
+  }
+`;
 
 export const EmailInput = styled.input.attrs({
   type: 'email',

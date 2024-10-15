@@ -1,5 +1,6 @@
 import React from 'react';
 import petsData from '../../data/petsData/petsData.json';
+import { useNavigate } from 'react-router-dom';
 import {
   ListContainer,
   Card,
@@ -21,6 +22,11 @@ import {
 } from './PetsListStyles';
 
 const PetsList = () => {
+  const navigate = useNavigate();
+  const handleCategory = () => {
+    navigate('/category');
+  };
+
   return (
     <ListContainer>
       <HeaderContainer>
@@ -29,7 +35,7 @@ const PetsList = () => {
           <HeaderSubtitle>Take a look at some of our pets</HeaderSubtitle>
         </HeaderTitleCon>
         <ButtonCon>
-          <ViewMoreButton>
+          <ViewMoreButton onClick={handleCategory}>
             View more
             <i class='fa-solid fa-angle-right'></i>
           </ViewMoreButton>

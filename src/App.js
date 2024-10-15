@@ -5,6 +5,9 @@ import Category from './pages/category/Category';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import Login from './pages/logIn/Login';
 import SingUp from './pages/signUp/SingUp';
+import RecoveryPassword from './pages/recoveryPassword/RecoveryPassword';
+import ConfirmPassword from './pages/confirmPassword/ConfirmPassword';
+import LogInDone from './pages/logInDone/LogInDone';
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Route path='/productdetail' element={<ProductDetail />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SingUp />} />
+        <Route path='/RecoveryPassword' element={<RecoveryPassword />} />
+        <Route path='/confirmPassword' element={<ConfirmPassword />} />
+        <Route path='/loginDone' element={<LogInDone />} />
       </Routes>
     </Router>
   );

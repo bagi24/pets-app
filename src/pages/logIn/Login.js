@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SecondaryHeder from '../../components/secondaryHeder/SecondaryHeder';
 import Footer from '../../components/footer/Footer';
 import GoogleLogo from '../../assets/images/logos/Google.png';
+import { useNavigate } from 'react-router-dom';
 import {
   LoginCon,
   SignCon,
@@ -18,6 +19,7 @@ import {
   LineSpan,
   GoogleSingButton,
   LineCon,
+  SingUpLink,
 } from './loginStyles';
 
 const Login = () => {
@@ -25,6 +27,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+
+  const navigate = useNavigate();
 
   // Email validation
   useEffect(() => {
@@ -35,7 +39,7 @@ const Login = () => {
     }
   }, [email]);
 
-  // Password validation (at least 6 characters)
+  // Password validation
   useEffect(() => {
     if (password && password.length < 6) {
       setPasswordError('Password must be at least 6 characters');
@@ -50,6 +54,21 @@ const Login = () => {
 
   const handlePasswordChange = e => {
     setPassword(e.target.value);
+  };
+
+  const handleSingUp = () => {
+    navigate('/singup');
+  };
+
+  const handleForgotPassword = () => {
+    navigate('/RecoveryPassword');
+  };
+
+  const handleLogin = () => {
+    if (!emailError && !passwordError && email && password) {
+      // Proceed only if both fields are valid and filled
+      navigate('/loginDone');
+    }
   };
 
   return (
@@ -78,12 +97,19 @@ const Login = () => {
               placeholder='Password'
             />
             {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
-            <ForgotPassSpan> Forgot Password?</ForgotPassSpan>
+            <ForgotPassSpan onClick={handleForgotPassword}> Forgot Password?</ForgotPassSpan>
           </InputCon>
 
           <LoginButtonCon>
-            <LoginButton disabled={emailError || passwordError}>Login</LoginButton>
-            <SignUpTitleSpan>Don't have an account? Sign up</SignUpTitleSpan>
+            {/* Button is disabled if there are validation errors or inputs are empty */}
+            <LoginButton
+              disabled={!!emailError || !!passwordError || email === '' || password === ''}
+              onClick={handleLogin}>
+              Login
+            </LoginButton>
+            <SignUpTitleSpan>
+              Don't have an account? <SingUpLink onClick={handleSingUp}>Sing Up</SingUpLink>
+            </SignUpTitleSpan>
           </LoginButtonCon>
         </GoogleSingCon>
       </SignCon>
