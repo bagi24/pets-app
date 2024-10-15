@@ -4,7 +4,6 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
   width: 100%;
   gap: 404px;
   background: inherit;
@@ -18,20 +17,20 @@ export const NavCon = styled.div`
   justify-content: flex-start;
   gap: 48px;
   width: 100%;
-  /* padding: 30px 0px 30px 130px; */
 `;
 
 export const AuthorizationCon = styled.div`
   display: flex;
-  /* padding: 28px 130px 28px 0px; */
+
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 24px;
   width: 100%;
 `;
 
 export const StyledLogo = styled.img`
-  width: 120px;
+  width: 115px;
+  height: 40px;
 `;
 
 export const Span = styled.span`
@@ -50,23 +49,34 @@ export const Span = styled.span`
 export const LanguageSelector = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   width: 105px;
   height: 44px;
   gap: 8px;
+
   cursor: pointer;
 `;
 
 export const FlagImage = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
   object-fit: cover;
 `;
 
 export const Abbreviation = styled.span`
-  font-size: 14px;
-  font-weight: 600;
-  color: black;
+  font-family: 'SF Pro Display';
+  font-size: 16px;
+  line-height: 23px;
+  color: #002a48;
+`;
+
+export const ArrowDown = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 `;
 
 export const LanguageDropdown = styled.div`
@@ -75,7 +85,9 @@ export const LanguageDropdown = styled.div`
   width: 100px;
   height: 44px;
   position: absolute;
-  top: 64px;
+  top: 74px;
+  right: 295px;
+  z-index: 1005;
 `;
 
 export const DropdownItem = styled.div`

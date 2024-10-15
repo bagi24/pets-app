@@ -16,6 +16,7 @@ import {
   AuthorizationCon,
   LanguageCon,
   NavCon,
+  ArrowDown,
 } from './secondaryHeaderStyles';
 
 const SecondaryHeder = () => {
@@ -55,7 +56,9 @@ const SecondaryHeder = () => {
           <LanguageSelector onClick={toggleDropdown}>
             <FlagImage src={language.flag} alt={`${language.abbreviation} Flag`} />
             <Abbreviation>{language.abbreviation}</Abbreviation>
-            <i class='fa-solid fa-angle-down'></i>
+            <ArrowDown>
+              <i class='fa-solid fa-angle-down'></i>
+            </ArrowDown>
           </LanguageSelector>
 
           {isDropdownOpen && (

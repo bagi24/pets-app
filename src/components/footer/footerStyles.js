@@ -20,10 +20,9 @@ export const TitleCon = styled.div`
   background-color: #003459;
   width: 1180px;
   height: 136px;
-  padding: 32px;
   gap: 20px;
-  border-radius: 16px;
   margin-top: 80px;
+  border-radius: 16px;
 `;
 
 export const Title = styled.h2`
@@ -73,9 +72,8 @@ export const NavCon = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 
-  max-width: 1200px;
+  width: 1180px;
   padding-top: 40px;
   padding-bottom: 40px;
 `;
@@ -117,8 +115,7 @@ export const EndPointCon = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
+  width: 1180px;
 
   border-top: 1px solid #ffffff33;
   padding: 40px 130px 40px;
