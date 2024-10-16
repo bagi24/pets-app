@@ -2,78 +2,150 @@ import styled from 'styled-components';
 
 export const FilterSpace = styled.div`
   width: 100%;
-
   margin-top: 35px;
   margin-bottom: 60px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 `;
-export const Title = styled.div``;
+
+export const TitleCon = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const TitleConteiner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+`;
+
+export const SubTitle = styled.div`
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #667479;
+`;
+
+export const Title = styled.h1`
+  font-family: ' SF Pro Display';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  margin: 0;
+`;
+
+export const SortButton = styled.h1`
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 34px;
+  padding: 0px 10px 0px 20px;
+  gap: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccd1d2;
+  cursor: pointer;
+  &:hover {
+    background-color: lightblue;
+  }
+`;
 
 export const LeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   max-width: 252px;
   width: 100%;
-  background-color: bisque;
+`;
+
+export const FilterSearchArea = styled.div`
   align-self: flex-start;
+  width: 100%;
 `;
 
 export const RightSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
+  flex-direction: column;
   width: 100%;
+  gap: 14px;
 `;
 
 export const CheckboxGroup = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
+  margin-right: 30px;
 `;
 
 export const Label = styled.label`
-  font-size: 18px;
   margin-bottom: 10px;
+  font-family: 'SF Pro Display';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
   color: #003459;
 `;
 
 export const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 8px;
+
   cursor: pointer;
-  font-size: 16px;
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
 `;
 
 export const Checkbox = styled.input`
-  width: 20px;
-  height: 20px;
   cursor: pointer;
+  width: 16px;
+  height: 16px;
+
+  border-radius: 4px;
+  border: 1px solid #ccd1d2;
 `;
 
 export const PriceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 200px;
-  margin: 20px;
-`;
-
-export const InputWrapper = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
+export const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 115px;
+  height: 20px;
+  padding: 10px;
+`;
+
 export const PriceInput = styled.input`
-  width: 100px;
+  width: 100%;
   height: 40px;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  text-align: start;
   appearance: textfield;
 
   &::-webkit-outer-spin-button,
@@ -89,17 +161,23 @@ export const PriceInput = styled.input`
 `;
 
 export const ArrowButtons = styled.div`
-  position: absolute;
-  right: -30px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
+`;
+
+export const ArrowButtons2 = styled.div`
+  position: absolute;
+  right: 1215px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
 export const ArrowButton = styled.button`
-  width: 20px;
-  height: 20px;
-  background-color: #003459;
+  width: 14px;
+  height: 14px;
+  background-color: #242b33;
   color: white;
   border: none;
   cursor: pointer;
@@ -204,4 +282,28 @@ export const Price = styled.p`
   color: #00171f;
   font-weight: bold;
   margin: 0px;
+`;
+
+export const Circle = styled.div`
+  color: #ff564f;
+`;
+
+export const Circle1 = styled.div`
+  color: #ffb672;
+`;
+
+export const Circle2 = styled.div`
+  color: #242b33;
+`;
+
+export const Circle3 = styled.div`
+  color: linear-gradient(90deg, #242b33 0%, #242b33 52.59%, #d7d7d7 52.6%, #d2d2d2 100%);
+`;
+
+export const Circle4 = styled.div`
+  color: #cecece;
+`;
+
+export const Circle5 = styled.div`
+  color: #fff7ce;
 `;
