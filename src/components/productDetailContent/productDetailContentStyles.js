@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const ProductDetailInfoCon = styled.div`
   width: 100%;
-  border-radius: 20px;
   display: flex;
   align-items: start;
-  justify-content: flex-start;
-  gap: 34px;
-  border: 1px solid #ebeeef;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const LeftSide = styled.div`
@@ -196,6 +195,8 @@ export const AdvanceData = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   gap: 18px;
+  margin: 0;
+  padding: 0;
 `;
 export const Info = styled.div`
   display: flex;
@@ -215,4 +216,171 @@ export const InfoValue = styled.span`
   width: 323px;
   height: 26px;
   padding: 4px 11px 2px 11px;
+`;
+
+export const ProductContent = styled.div`
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 34px;
+  border: 1px solid #ebeeef;
+`;
+
+// Styled Components
+export const LovelyCustomerCon = styled.div`
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
+export const CustomerTitle = styled.h2`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const CustomerImgSlider = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+`;
+
+export const CustomerImg = styled.img`
+  width: 20%;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 10px;
+  margin-right: 10px;
+  object-fit: cover;
+`;
+
+export const MorePuppies = styled.div`
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 28px;
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 280px;
+  height: 378px;
+  padding: 8px 8px 0px 8px;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 0px;
+  box-shadow: 0px 4px 28px -2px #00000014;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 4px 28px -2px #00000024;
+  }
+`;
+
+export const InfoCon = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8px 8px 20px 8px;
+  margin: 0px;
+  gap: 4px;
+`;
+
+export const Gene = styled.span`
+  font-family: 'SF Pro Display';
+  font-size: 12px;
+  line-height: 18px;
+`;
+
+export const Dot = styled.i`
+  display: flex;
+  align-items: center;
+
+  font-size: 4px;
+  color: #667479;
+`;
+
+export const Age = styled.span`
+  font-family: 'SF Pro Display';
+  font-size: 12px;
+  line-height: 18px;
+`;
+
+export const PetImage = styled.img`
+  width: 264px;
+  height: 264px;
+  object-fit: cover;
+  border-radius: 10px;
+  padding: 8px;
+`;
+
+export const PetName = styled.h2`
+  font-family: 'SF Pro Display';
+  font-size: 16px;
+  line-height: 24px;
+  color: #00171f;
+  margin: 0px;
+`;
+
+export const PetInfo = styled.p`
+  font-family: 'SF Pro Display';
+  font-size: 12px;
+  line-height: 18px;
+  color: #667479;
+  display: flex;
+  gap: 4px;
+  margin: 0px;
+`;
+
+export const Price = styled.p`
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  line-height: 20px;
+  color: #00171f;
+  font-weight: bold;
+  margin: 0px;
+`;
+
+export const HeaderTitleCon = styled.div`
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+`;
+export const HeaderTitle = styled.span`
+  font-family: 'SF Pro Display';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+`;
+export const HeaderSubtitle = styled.span`
+  font-family: 'SF Pro Display';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+
+  color: #003459;
 `;
