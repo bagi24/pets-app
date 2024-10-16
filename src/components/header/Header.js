@@ -17,16 +17,19 @@ import {
   LanguageCon,
   NavCon,
   Rectangle3,
+  LogOutContainer,
+  LogOutSpan,
+  LogOutTitle,
 } from './headerStyles';
 
-const Header = () => {
+const Header = ({ name, setName }) => {
   const navigate = useNavigate();
   const [language, setLanguage] = useState({
     flag: georgianFlag,
     abbreviation: 'GE',
   });
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLogOutOpen, setIsLogOutOpen] = useState(false);
 
   const toggleLanguage = (flag, abbreviation) => {
     setLanguage({ flag, abbreviation });
@@ -38,25 +41,46 @@ const Header = () => {
   };
 
   const handleJoin = () => {
-    navigate('/login');
+    if (name === 'Join the community') {
+      navigate('/login');
+    } else {
+      setIsLogOutOpen(true);
+    }
+  };
+
+  const handleLogOut = () => {
+    setName('Join the community');
+    setIsLogOutOpen(false);
+  };
+
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
+  const handleCategoryClick = () => {
+    navigate('/category');
+  };
+
+  const handleContactClick = () => {
+    navigate('/loginDone');
   };
 
   return (
     <HeaderContainer>
       <NavCon>
         <StyledLogo src={Logo} alt='logo' />
-        <Span>Home</Span>
-        <Span>Category</Span>
-        <Span>Contact</Span>
+        <Span onClick={handleHomeClick}>Home</Span>
+        <Span onClick={handleCategoryClick}>Category</Span>
+        <Span onClick={handleContactClick}>Contact</Span>
       </NavCon>
       <Rectangle3></Rectangle3>
       <AuthorizationCon>
-        <Button onClick={handleJoin}>Join the community</Button>
+        <Button onClick={handleJoin}>{name}</Button>
         <LanguageCon>
           <LanguageSelector onClick={toggleDropdown}>
-            <FlagImage src={language.flag} alt={`${language.abbreviation} Flag`} />
+            <FlagImage src={language.flag} alt='' />
             <Abbreviation>{language.abbreviation}</Abbreviation>
-            <i class='fa-solid fa-angle-down'></i>
+            <i className='fa-solid fa-angle-down'></i>
           </LanguageSelector>
 
           {isDropdownOpen && (
@@ -73,6 +97,14 @@ const Header = () => {
           )}
         </LanguageCon>
       </AuthorizationCon>
+
+      {isLogOutOpen && (
+        <LogOutContainer>
+          <LogOutTitle>{name}</LogOutTitle>
+          <LogOutSpan>Profile</LogOutSpan>
+          <LogOutSpan onClick={handleLogOut}>Log Out</LogOutSpan>
+        </LogOutContainer>
+      )}
     </HeaderContainer>
   );
 };

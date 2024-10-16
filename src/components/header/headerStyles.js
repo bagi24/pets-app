@@ -127,3 +127,35 @@ export const Rectangle3 = styled.div`
   transform: rotate(23deg);
   z-index: 1000;
 `;
+
+export const LogOutContainer = styled.div`
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  width: 200px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1009;
+`;
+
+export const LogOutSpan = styled.span`
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: lightblue;
+  }
+`;
+
+export const LogOutTitle = styled.h1`
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+`;

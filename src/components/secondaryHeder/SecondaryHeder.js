@@ -41,13 +41,23 @@ const SecondaryHeder = () => {
     navigate('/login');
   };
 
+  const handleHome = () => {
+    navigate('/');
+  };
+  const handleCategory = () => {
+    navigate('/category');
+  };
+  const handleContact = () => {
+    navigate('/loginDone');
+  };
+
   return (
     <HeaderContainer>
       <NavCon>
         <StyledLogo src={Logo} alt='logo' />
-        <Span>Home</Span>
-        <Span>Category</Span>
-        <Span>Contact</Span>
+        <Span onClick={handleHome}>Home</Span>
+        <Span onClick={handleCategory}>Category</Span>
+        <Span onClick={handleContact}>Contact</Span>
       </NavCon>
 
       <AuthorizationCon>

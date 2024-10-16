@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import GoogleLogo from '../../assets/images/logos/Google.png';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -31,7 +30,7 @@ const SingUp = () => {
   const [passwordError, setPasswordError] = useState('');
 
   const navigate = useNavigate();
-  // Email validation
+
   useEffect(() => {
     if (email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
       setEmailError('Invalid email address');
@@ -42,13 +41,12 @@ const SingUp = () => {
 
   useEffect(() => {
     if (name && name.length < 4) {
-      setNameError('Invalid email address');
+      setNameError('Name must be at least 4 characters');
     } else {
       setNameError('');
     }
   }, [name]);
 
-  // Password validation (at least 6 characters)
   useEffect(() => {
     if (password && password.length < 6) {
       setPasswordError('Password must be at least 6 characters');
@@ -70,7 +68,15 @@ const SingUp = () => {
   };
 
   const handleSingUp = () => {
-    navigate('/singup');
+    navigate('/login');
+  };
+
+  const handleCreateEccount = () => {
+    if (!emailError && !passwordError && !nameError && email && password && name) {
+      navigate('/', { state: { name } });
+    } else {
+      console.log('Fill all the fields correctly');
+    }
   };
 
   return (
@@ -106,7 +112,9 @@ const SingUp = () => {
           </InputCon>
 
           <LoginButtonCon>
-            <LoginButton disabled={emailError || passwordError}>Create account</LoginButton>
+            <LoginButton onClick={handleCreateEccount} disabled={emailError || passwordError}>
+              Create account
+            </LoginButton>
             <SignUpTitleSpan>
               Already have an account? <SingUpLink onClick={handleSingUp}>Log in</SingUpLink>
             </SignUpTitleSpan>

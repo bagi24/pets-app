@@ -66,8 +66,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (!emailError && !passwordError && email && password) {
-      // Proceed only if both fields are valid and filled
-      navigate('/loginDone');
+      navigate('/');
     }
   };
 
