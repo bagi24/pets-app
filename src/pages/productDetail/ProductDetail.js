@@ -1,24 +1,19 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import petsData from '../../data/petsData/petsData.json';
+import { ProductDetailContainer, ProductDetailSpace } from './productDetailStyles';
+
+import SecondaryHeder from '../../components/secondaryHeder/SecondaryHeder';
+import Footer from '../../components/footer/Footer';
+import ProductDetailContent from '../../components/productDetailContent/ProductDetailContent';
 
 const ProductDetail = () => {
-  const { id } = useParams();
-
-  const pet = petsData.find(pet => pet.id === Number(id));
-
-  if (!pet) {
-    return <div>Pet not found!</div>;
-  }
-
   return (
-    <div>
-      <h1>{pet.name}</h1>
-      <img src={pet.image} alt={pet.name} />
-      <p>Gene: {pet.gene}</p>
-      <p>Age: {pet.age}</p>
-      <p>Price: {pet.price}</p>
-    </div>
+    <ProductDetailSpace>
+      <ProductDetailContainer>
+        <SecondaryHeder />
+        <ProductDetailContent />
+      </ProductDetailContainer>
+      <Footer />
+    </ProductDetailSpace>
   );
 };
 
