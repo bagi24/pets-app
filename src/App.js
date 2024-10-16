@@ -8,6 +8,7 @@ import SingUp from './pages/signUp/SingUp';
 import RecoveryPassword from './pages/recoveryPassword/RecoveryPassword';
 import ConfirmPassword from './pages/confirmPassword/ConfirmPassword';
 import LogInDone from './pages/logInDone/LogInDone';
+import Chat from './pages/chat/Chat';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/RecoveryPassword' element={<RecoveryPassword />} />
         <Route path='/confirmPassword' element={<ConfirmPassword />} />
         <Route path='/loginDone' element={<LogInDone />} />
+        <Route path='/chat' element={<Chat />} />
       </Routes>
     </Router>
   );

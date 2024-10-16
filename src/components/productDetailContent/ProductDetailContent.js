@@ -64,6 +64,10 @@ const ProductDetailContent = () => {
     navigate(`/productdetail/${petId}`);
   };
 
+  const handleChat = () => {
+    navigate('/chat');
+  };
+
   return (
     <ProductDetailInfoCon>
       <ProductContent>
@@ -115,7 +119,7 @@ const ProductDetailContent = () => {
 
           <ButtonsCon>
             <ContactButton>Contact us</ContactButton>
-            <ChatButton>
+            <ChatButton onClick={handleChat}>
               <i className='fa-regular fa-comment-dots'></i> Chat with Monito
             </ChatButton>
           </ButtonsCon>
