@@ -19,17 +19,30 @@ import {
 } from './heroBannerStyles';
 import Logo from '../../assets/images/logos/logo1.png';
 
-const HeroBanner = () => {
+const HeroBanner = ({ languageTranslate }) => {
+  const translations = {
+    GE: {
+      title: ' მეგობარი ძაღლი',
+      subtitle: 'დამატებითი სიამოვნება!',
+      description:
+        'ცხოველის ყოლა ნიშნავს მეტ სიხარულს, ახალ მეგობარს, ბედნიერ ადამიანს, რომელიც ყოველთვის თქვენთან იქნება გართობისთვის. ჩვენ გვყავს 200+ სხვადასხვა ცხოველი, რომელიც თქვენს მოთხოვნებს დააკმაყოფილებს!',
+    },
+    EN: {
+      title: 'One More Friend',
+      subtitle: 'Thousands More Fun!',
+      description:
+        'Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!',
+    },
+  };
+
+  const { title, subtitle, description } = translations[languageTranslate];
   return (
     <HeroContainer>
       <ContentContainer>
         <Rectangle4></Rectangle4>
-        <Title>One More Friend</Title>
-        <Subtitle>Thousands More Fun!</Subtitle>
-        <Description>
-          Having a pet means you have more joy, a new friend, a happy person who will always be with
-          you to have fun. We have 200+ different pets that can meet your needs!
-        </Description>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+        <Description>{description}</Description>
         <ButtonContainer>
           <Button>
             View Intro

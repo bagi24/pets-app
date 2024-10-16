@@ -17,11 +17,12 @@ const HomePage = () => {
   const location = useLocation();
   const initialName = location.state?.name || 'Join the community';
   const [name, setName] = useState(initialName);
+  const [languageTranslate, setLanguageTranslate] = useState('EN'); // დაემატა ენის მდგომარეობა
 
   return (
     <HomePageConStructure>
-      <Header name={name} setName={setName} />
-      <HeroBanner />
+      <Header name={name} setName={setName} setLanguageTranslate={setLanguageTranslate} />
+      <HeroBanner languageTranslate={languageTranslate} />
       <PetsList />
       <SecondaryBanner />
       <ProductsList />

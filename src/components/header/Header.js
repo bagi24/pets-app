@@ -22,19 +22,14 @@ import {
   LogOutTitle,
 } from './headerStyles';
 
-const Header = ({ name, setName }) => {
+const Header = ({ name, setName, setLanguageTranslate }) => {
   const navigate = useNavigate();
   const [language, setLanguage] = useState({
-    flag: georgianFlag,
-    abbreviation: 'GE',
+    flag: englishFlag,
+    abbreviation: 'EN',
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLogOutOpen, setIsLogOutOpen] = useState(false);
-
-  const toggleLanguage = (flag, abbreviation) => {
-    setLanguage({ flag, abbreviation });
-    setIsDropdownOpen(false);
-  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -65,6 +60,13 @@ const Header = ({ name, setName }) => {
     navigate('/loginDone');
   };
 
+  const toggleLanguage = (flag, abbreviation, langCode) => {
+    console.log(setLanguageTranslate); // კონსოლზე გამოყვანა
+    setLanguage({ flag, abbreviation });
+    setLanguageTranslate(langCode); // ენის კოდის ჩასმა
+    setIsDropdownOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <NavCon>
@@ -85,11 +87,11 @@ const Header = ({ name, setName }) => {
 
           {isDropdownOpen && (
             <LanguageDropdown>
-              <DropdownItem onClick={() => toggleLanguage(englishFlag, 'EN')}>
+              <DropdownItem onClick={() => toggleLanguage(englishFlag, 'EN', 'EN')}>
                 <FlagImage src={englishFlag} alt='EN Flag' />
                 <Abbreviation>EN</Abbreviation>
               </DropdownItem>
-              <DropdownItem onClick={() => toggleLanguage(georgianFlag, 'GE')}>
+              <DropdownItem onClick={() => toggleLanguage(georgianFlag, 'GE', 'GE')}>
                 <FlagImage src={georgianFlag} alt='GE Flag' />
                 <Abbreviation>GE</Abbreviation>
               </DropdownItem>

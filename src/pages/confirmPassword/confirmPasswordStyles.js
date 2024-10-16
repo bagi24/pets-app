@@ -61,3 +61,8 @@ export const ResetButton = styled.button`
     cursor: not-allowed;
   }
 `;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 14px;
+`;
