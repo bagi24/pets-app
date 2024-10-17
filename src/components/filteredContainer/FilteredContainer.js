@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import {
   FilterSpace,
   LeftSide,
@@ -37,7 +36,6 @@ import {
   SubTitle,
   ArrowButtons2,
 } from './filteredContainerStyles';
-import { useState } from 'react';
 import PetsData from '../../data/petsData/petsData.json';
 import { useNavigate } from 'react-router-dom';
 
@@ -50,11 +48,52 @@ const FilteredContainer = () => {
 
   const [minPrice, setMinPrice] = useState(null);
   const [maxPrice, setMaxPrice] = useState(null);
-
+  const [filteredPets, setFilteredPets] = useState(PetsData); // დასაწყისში ყველა მონაცემი
   const navigate = useNavigate();
 
+  useEffect(() => {
+    let updatedPets = PetsData;
+
+    console.log('Initial Pets Data:', PetsData);
+
+    // 1. ფილტრაცია Gender-ის მიხედვით
+    if (filters.gender.length > 0) {
+      updatedPets = updatedPets.filter(pet => filters.gender.includes(pet.gene));
+      console.log('Filtered by Gender:', updatedPets);
+    }
+
+    // 2. ფილტრაცია Color-ის მიხედვით
+    if (filters.color.length > 0) {
+      updatedPets = updatedPets.filter(pet => filters.color.includes(pet.Color));
+      console.log('Filtered by Color:', updatedPets);
+    }
+
+    // 3. ფილტრაცია Breed-ის მიხედვით
+    if (filters.breed.length > 0) {
+      updatedPets = updatedPets.filter(pet => filters.breed.includes(pet.Size));
+      console.log('Filtered by Breed:', updatedPets);
+    }
+
+    // 4. ფილტრაცია Price-ის მიხედვით
+    if (minPrice !== null) {
+      updatedPets = updatedPets.filter(pet => pet.price >= minPrice);
+      console.log('Filtered by Min Price:', updatedPets);
+    }
+    if (maxPrice !== null) {
+      updatedPets = updatedPets.filter(pet => pet.price <= maxPrice);
+      console.log('Filtered by Max Price:', updatedPets); // მაქსიმალური ფასით ფილტრაცია
+    }
+
+    // გაფილტრული მონაცემების განახლება
+    setFilteredPets(updatedPets);
+    console.log('Final Filtered Pets:', updatedPets); // საბოლოო მონაცემები
+  }, [filters, minPrice, maxPrice]);
+
+  // ჩექბოქსების მართვის ფუნქცია
   const handleCheckboxChange = (e, category) => {
     const { value, checked } = e.target;
+    console.log('Checkbox change:', value, checked, category);
+
     setFilters(prevFilters => ({
       ...prevFilters,
       [category]: checked
@@ -80,6 +119,7 @@ const FilteredContainer = () => {
       <LeftSide>
         <Title>Filter</Title>
         <FilterSearchArea>
+          {/* Gender Filter */}
           <CheckboxGroup style={{ borderBottom: '1px solid #ebeeef' }}>
             <Label>Gender</Label>
             <CheckboxLabel>
@@ -110,7 +150,7 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle>
               Red
             </CheckboxLabel>
@@ -121,7 +161,7 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle1>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle1>
               Apricot
             </CheckboxLabel>
@@ -132,7 +172,7 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle2>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle2>
               Black
             </CheckboxLabel>
@@ -143,7 +183,7 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle3>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle3>
               Black & White
             </CheckboxLabel>
@@ -154,7 +194,7 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle4>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle4>
               Silver
             </CheckboxLabel>
@@ -165,48 +205,47 @@ const FilteredContainer = () => {
                 onChange={e => handleCheckboxChange(e, 'color')}
               />
               <Circle5>
-                <i class='fa-solid fa-circle'></i>
+                <i className='fa-solid fa-circle'></i>
               </Circle5>
               Tan
             </CheckboxLabel>
           </CheckboxGroup>
 
+          {/* Price Filter */}
           <PriceContainer>
-            {/* Min Price */}
             <div>
               <InputWrapper>
                 <PriceInput
                   type='number'
-                  value={minPrice}
+                  value={minPrice || ''}
                   onChange={e => setMinPrice(Number(e.target.value))}
                   placeholder='Min'
                 />
                 <ArrowButtons>
                   <ArrowButton onClick={() => increment(setMinPrice, minPrice)}>
-                    <i class='fa-solid fa-angle-up'></i>
+                    <i className='fa-solid fa-angle-up'></i>
                   </ArrowButton>
                   <ArrowButton onClick={() => decrement(setMinPrice, minPrice)}>
-                    <i class='fa-solid fa-angle-down'></i>
+                    <i className='fa-solid fa-angle-down'></i>
                   </ArrowButton>
                 </ArrowButtons>
               </InputWrapper>
             </div>
 
-            {/* Max Price */}
             <div>
               <InputWrapper>
                 <PriceInput
                   type='number'
-                  value={maxPrice}
+                  value={maxPrice || ''}
                   onChange={e => setMaxPrice(Number(e.target.value))}
                   placeholder='Max'
                 />
                 <ArrowButtons2>
                   <ArrowButton onClick={() => increment(setMaxPrice, maxPrice)}>
-                    <i class='fa-solid fa-angle-up'></i>
+                    <i className='fa-solid fa-angle-up'></i>
                   </ArrowButton>
                   <ArrowButton onClick={() => decrement(setMaxPrice, maxPrice)}>
-                    <i class='fa-solid fa-angle-down'></i>
+                    <i className='fa-solid fa-angle-down'></i>
                   </ArrowButton>
                 </ArrowButtons2>
               </InputWrapper>
@@ -248,14 +287,14 @@ const FilteredContainer = () => {
         <TitleCon>
           <TitleConteiner>
             <Title>Small Dog</Title>
-            <SubTitle>52 puppies</SubTitle>
+            <SubTitle>{filteredPets.length} puppies</SubTitle>
           </TitleConteiner>
           <SortButton>
-            Sort by: Popular <i class='fa-solid fa-angle-down'></i>{' '}
+            Sort by: Popular <i className='fa-solid fa-angle-down'></i>
           </SortButton>
         </TitleCon>
         <CardContainer>
-          {PetsData.slice(0, 15).map(pet => (
+          {filteredPets.slice(0, 15).map(pet => (
             <Card key={pet.id} onClick={() => handlePetClick(pet.id)}>
               <PetImage src={pet.image} alt={pet.name} />
               <InfoCon>
@@ -265,9 +304,9 @@ const FilteredContainer = () => {
                   <Dot>
                     <i className='fa-solid fa-circle'></i>
                   </Dot>
-                  <Age>Age: {pet.age}</Age>
+                  <Age>{pet.age} months</Age>
                 </PetInfo>
-                <Price>{pet.price}</Price>
+                <Price>${pet.price}</Price>
               </InfoCon>
             </Card>
           ))}
