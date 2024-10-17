@@ -5,7 +5,8 @@ import {
   InputLabel,
   TextInput,
   ResetButton,
-  ErrorMessage,
+  InputConteiner,
+  InputSpace,
 } from './confirmPasswordStyles';
 
 const ConfirmPassword = () => {
@@ -17,41 +18,44 @@ const ConfirmPassword = () => {
 
   const handleReset = () => {
     if (newPassword === confirmPassword) {
-      navigate('/login'); // გადამისამართება login გვერდზე
+      navigate('/login');
     } else {
-      setError('Passwords do not match'); // შეცდომის შეტყობინება
+      setError('Passwords do not match');
     }
   };
 
   const handlePasswordChange = e => {
     setNewPassword(e.target.value);
-    if (error) setError(''); // თუ შეცდომა იყო, შლის შეტყობინებას
+    if (error) setError('');
   };
 
   const handleConfirmPasswordChange = e => {
     setConfirmPassword(e.target.value);
-    if (error) setError(''); // თუ შეცდომა იყო, შლის შეტყობინებას
+    if (error) setError('');
   };
 
   return (
     <Container>
-      <InputLabel htmlFor='new-password'>New Password</InputLabel>
-      <TextInput
-        type='password'
-        id='new-password'
-        placeholder='Enter new password'
-        value={newPassword}
-        onChange={handlePasswordChange}
-      />
-      <InputLabel htmlFor='confirm-password'>Confirm Password</InputLabel>
-      <TextInput
-        type='password'
-        id='confirm-password'
-        placeholder='Confirm new password'
-        value={confirmPassword}
-        onChange={handleConfirmPasswordChange}
-      />
-      {error && <ErrorMessage>{error}</ErrorMessage>} {/* თუ პაროლები არ ემთხვევა */}
+      <InputConteiner>
+        <InputSpace>
+          <InputLabel htmlFor='new-password'>New Password</InputLabel>
+          <TextInput
+            type='password'
+            id='new-password'
+            value={newPassword}
+            onChange={handlePasswordChange}
+          />
+        </InputSpace>
+        <InputSpace>
+          <InputLabel htmlFor='confirm-password'>Confirm Password</InputLabel>
+          <TextInput
+            type='password'
+            id='confirm-password'
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+          />
+        </InputSpace>
+      </InputConteiner>
       <ResetButton
         onClick={handleReset}
         disabled={newPassword === '' || confirmPassword === '' || newPassword !== confirmPassword}>

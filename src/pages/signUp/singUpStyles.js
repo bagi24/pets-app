@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const LoginCon = styled.div`
+export const SingUpCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 130px 0px 130px;
+  height: 100vh;
+
   background-color: #fdfdfd;
 `;
 
@@ -21,14 +22,13 @@ export const GoogleSingCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
-  width: 100%;
-  max-width: 400px;
-  background-color: #f8f8f8;
-  padding: 32px;
+
+  width: 320px;
+  height: 444px;
+
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
 export const GoogleSing = styled.div`
@@ -36,21 +36,30 @@ export const GoogleSing = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: 32px;
 `;
 
 export const GoogleSingButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
+
+  width: 320px;
+  height: 44px;
+
+  padding: 12px 24px 12px 24px;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid #b6b7bc;
+
+  color: #003459;
   background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24.5px;
+
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -70,11 +79,17 @@ export const LineCon = styled.div`
   justify-content: center;
   width: 100%;
   gap: 8px;
+
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.05em;
 `;
 
 export const LineSpan = styled.span`
   display: inline-block;
-  width: 30px;
+  width: 100%;
   height: 1px;
   background-color: #ccc;
 `;
@@ -83,35 +98,34 @@ export const InputCon = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
+  gap: 15px;
 `;
-export const NameInput = styled.input.attrs({
-  type: 'text',
-  placeholder: 'Name',
-})`
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
 
-  &:focus {
-    border-color: #0077cc;
-  }
+export const InputSpace = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1px;
+`;
+
+export const Label = styled.label`
+  display: flex;
+
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24.5px;
 `;
 
 export const EmailInput = styled.input.attrs({
   type: 'email',
-  placeholder: 'Email',
 })`
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   outline: none;
-
+  width: 320px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #e6e7e8;
+  padding: 0px;
   &:focus {
     border-color: #0077cc;
   }
@@ -119,15 +133,13 @@ export const EmailInput = styled.input.attrs({
 
 export const PasswordInput = styled.input.attrs({
   type: 'password',
-  placeholder: 'Password',
 })`
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   outline: none;
-
+  width: 320px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #e6e7e8;
+  padding: 0px;
   &:focus {
     border-color: #0077cc;
   }
@@ -135,8 +147,12 @@ export const PasswordInput = styled.input.attrs({
 
 export const ForgotPassSpan = styled.span`
   align-self: flex-end;
+  color: #003459;
+  font-family: 'Inter';
   font-size: 12px;
-  color: #0077cc;
+  font-weight: 500;
+  line-height: 24px;
+
   cursor: pointer;
 
   &:hover {
@@ -148,19 +164,26 @@ export const LoginButtonCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
 `;
 
 export const LoginButton = styled.button`
   width: 100%;
-  padding: 12px 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background-color: #0077cc;
-  border: none;
-  border-radius: 8px;
+
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24.5px;
+
+  width: 318px;
+  height: 44px;
+
+  padding: 12px 24px 12px 24px;
+  gap: 6px;
+  border-radius: 4px;
+  background-color: #003459;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -171,14 +194,13 @@ export const LoginButton = styled.button`
 
 export const SignUpTitleSpan = styled.span`
   display: flex;
-  color: #333;
-  font-size: 14px;
-`;
 
-export const SingUpLink = styled.div`
-  color: #0077cc;
-  cursor: pointer;
+  font-family: 'Inter';
   font-size: 14px;
+  font-weight: 400;
+  line-height: 24.5px;
+  color: #003459;
+  cursor: pointer;
   &:hover {
     text-decoration: underline;
   }

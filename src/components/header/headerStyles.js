@@ -131,22 +131,36 @@ export const Rectangle3 = styled.div`
 export const LogOutContainer = styled.div`
   position: absolute;
   top: 80px;
-  right: 250px;
-  width: 200px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  right: 220px;
+
+  padding: 16px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(92, 115, 160, 0.25);
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1009;
+
+  width: 272px;
+  height: auto;
+
+  border: 1px solid #ffffff;
 `;
 
 export const LogOutSpan = styled.span`
-  font-size: 16px;
-  color: #333;
-  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: ' Noto Sans Georgian';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #003459;
+
+  gap: 15px;
   cursor: pointer;
 
   &:hover {
@@ -155,7 +169,25 @@ export const LogOutSpan = styled.span`
 `;
 
 export const LogOutTitle = styled.h1`
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 15px;
+  font-family: 'Noto Sans Georgian';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #003459;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 52, 89, 1);
+  padding-bottom: 15px;
+`;
+
+export const LogoutSpace = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18.48px;
+  width: 100%;
 `;

@@ -20,6 +20,7 @@ import {
   LogOutContainer,
   LogOutSpan,
   LogOutTitle,
+  LogoutSpace,
 } from './headerStyles';
 
 const Header = ({ name, setName, setLanguageTranslate }) => {
@@ -103,8 +104,14 @@ const Header = ({ name, setName, setLanguageTranslate }) => {
       {isLogOutOpen && (
         <LogOutContainer>
           <LogOutTitle>{name}</LogOutTitle>
-          <LogOutSpan>Profile</LogOutSpan>
-          <LogOutSpan onClick={handleLogOut}>Log Out</LogOutSpan>
+          <LogoutSpace>
+            <LogOutSpan>
+              <i class='fa-regular fa-user'></i> Profile
+            </LogOutSpan>
+            <LogOutSpan onClick={handleLogOut}>
+              <i class='fa-solid fa-right-from-bracket'></i> Log Out
+            </LogOutSpan>
+          </LogoutSpace>
         </LogOutContainer>
       )}
     </HeaderContainer>

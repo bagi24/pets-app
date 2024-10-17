@@ -86,7 +86,7 @@ export const LanguageDropdown = styled.div`
   height: 44px;
   position: absolute;
   top: 74px;
-  right: 295px;
+  right: 145px;
   z-index: 1005;
 `;
 

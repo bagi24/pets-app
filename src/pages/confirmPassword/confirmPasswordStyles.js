@@ -1,37 +1,27 @@
 import styled from 'styled-components';
 
-// კონტეინერი
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-color: #f7f9fc;
-  border-radius: 10px;
-  max-width: 400px;
-  margin: 0 auto;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  gap: 40px;
 `;
 
-// ლეიბელის სტილი
 export const InputLabel = styled.label`
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #333;
-  display: block;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24.5px;
+  color: #003459;
 `;
 
-// ინპუტის სტილი
 export const TextInput = styled.input`
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  background-color: #fff;
+  width: 320px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #e6e7e8;
 
   &:focus {
     outline: none;
@@ -39,16 +29,18 @@ export const TextInput = styled.input`
   }
 `;
 
-// ღილაკის სტილი
 export const ResetButton = styled.button`
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  width: 318px;
+  height: 44px;
+  border-radius: 4px;
   border: none;
-  border-radius: 5px;
+
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24.5px;
+  color: #ffffff;
+  background-color: #003459;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -62,7 +54,15 @@ export const ResetButton = styled.button`
   }
 `;
 
-export const ErrorMessage = styled.p`
-  color: red;
-  font-size: 14px;
+export const InputConteiner = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const InputSpace = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 `;

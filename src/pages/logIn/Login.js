@@ -20,6 +20,8 @@ import {
   GoogleSingButton,
   LineCon,
   SingUpLink,
+  Label,
+  InputSpace,
 } from './loginStyles';
 
 const Login = () => {
@@ -82,20 +84,22 @@ const Login = () => {
             </GoogleSingButton>
             <LineCon>
               <LineSpan />
-              or
+              OR
               <LineSpan />
             </LineCon>
           </GoogleSing>
 
           <InputCon>
-            <EmailInput value={email} onChange={handleEmailChange} placeholder='Email' />
-            {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
-            <PasswordInput
-              value={password}
-              onChange={handlePasswordChange}
-              placeholder='Password'
-            />
-            {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
+            <InputSpace>
+              <Label> Email</Label>
+              <EmailInput value={email} onChange={handleEmailChange} />
+              {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
+            </InputSpace>
+            <InputSpace>
+              <Label> Password</Label>
+              <PasswordInput value={password} onChange={handlePasswordChange} />
+              {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
+            </InputSpace>
             <ForgotPassSpan onClick={handleForgotPassword}> Forgot Password?</ForgotPassSpan>
           </InputCon>
 

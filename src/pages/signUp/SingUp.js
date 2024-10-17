@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+
 import GoogleLogo from '../../assets/images/logos/Google.png';
 import { useNavigate } from 'react-router-dom';
 import {
-  LoginCon,
+  SingUpCon,
   SignCon,
   GoogleSingCon,
   GoogleSing,
@@ -17,19 +18,27 @@ import {
   LineSpan,
   GoogleSingButton,
   LineCon,
-  SingUpLink,
-  NameInput,
+  Label,
+  InputSpace,
 } from './singUpStyles';
 
 const SingUp = () => {
-  const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
   const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (name && name.length < 3) {
+      setNameError('Name must be at least 6 characters');
+    } else {
+      setNameError('');
+    }
+  }, [name]);
 
   useEffect(() => {
     if (email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
@@ -40,14 +49,6 @@ const SingUp = () => {
   }, [email]);
 
   useEffect(() => {
-    if (name && name.length < 4) {
-      setNameError('Name must be at least 4 characters');
-    } else {
-      setNameError('');
-    }
-  }, [name]);
-
-  useEffect(() => {
     if (password && password.length < 6) {
       setPasswordError('Password must be at least 6 characters');
     } else {
@@ -55,7 +56,7 @@ const SingUp = () => {
     }
   }, [password]);
 
-  const handleName = e => {
+  const handleNameChange = e => {
     setName(e.target.value);
   };
 
@@ -71,7 +72,11 @@ const SingUp = () => {
     navigate('/login');
   };
 
-  const handleCreateEccount = () => {
+  const handleForgotPassword = () => {
+    navigate('/RecoveryPassword');
+  };
+
+  const handleCreateAccount = () => {
     if (!emailError && !passwordError && !nameError && email && password && name) {
       navigate('/', { state: { name } });
     } else {
@@ -80,7 +85,7 @@ const SingUp = () => {
   };
 
   return (
-    <LoginCon>
+    <SingUpCon>
       <SignCon>
         <GoogleSingCon>
           <GoogleSing>
@@ -90,38 +95,45 @@ const SingUp = () => {
             </GoogleSingButton>
             <LineCon>
               <LineSpan />
-              or
+              OR
               <LineSpan />
             </LineCon>
           </GoogleSing>
 
           <InputCon>
-            <NameInput value={name} onChange={handleName} placeholder='Name' />
-            {nameError && <span style={{ color: 'red' }}>{nameError}</span>}
-            <EmailInput value={email} onChange={handleEmailChange} placeholder='Email' />
-            {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
-            <PasswordInput
-              value={password}
-              onChange={handlePasswordChange}
-              placeholder='Password'
-            />
-            {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
-            <ForgotPassSpan>
+            <InputSpace>
+              <Label> Name</Label>
+              <EmailInput value={name} onChange={handleNameChange} />
+              {nameError && <span style={{ color: 'red' }}>{nameError}</span>}
+            </InputSpace>
+            <InputSpace>
+              <Label> Email</Label>
+              <EmailInput value={email} onChange={handleEmailChange} />
+              {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
+            </InputSpace>
+            <InputSpace>
+              <Label> Password</Label>
+              <PasswordInput value={password} onChange={handlePasswordChange} />
+              {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
+            </InputSpace>
+            <ForgotPassSpan onClick={handleForgotPassword}>
               By creating an account you agree with our Terms of Service, Privacy Policy,
             </ForgotPassSpan>
           </InputCon>
 
           <LoginButtonCon>
-            <LoginButton onClick={handleCreateEccount} disabled={emailError || passwordError}>
+            <LoginButton
+              disabled={emailError && passwordError && name}
+              onClick={handleCreateAccount}>
               Create account
             </LoginButton>
-            <SignUpTitleSpan>
-              Already have an account? <SingUpLink onClick={handleSingUp}>Log in</SingUpLink>
+            <SignUpTitleSpan onClick={handleSingUp}>
+              Already have an account? Log in
             </SignUpTitleSpan>
           </LoginButtonCon>
         </GoogleSingCon>
       </SignCon>
-    </LoginCon>
+    </SingUpCon>
   );
 };
 

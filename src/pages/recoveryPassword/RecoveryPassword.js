@@ -7,7 +7,7 @@ import {
   InputLabel,
   EmailInput,
   SendButton,
-  ErrorText,
+  InputSpace,
 } from './recoveryPasswordStyles';
 
 const RecoveryPassword = () => {
@@ -15,7 +15,7 @@ const RecoveryPassword = () => {
   const [isValid, setIsValid] = useState(true);
 
   const navigate = useNavigate();
-  // Regular expression for validating email
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   useEffect(() => {
@@ -41,16 +41,17 @@ const RecoveryPassword = () => {
         Please enter the email address associated with your account. We'll promptly send you a link
         to reset your password.
       </DescriptionText>
-      <InputLabel htmlFor='email'>Email</InputLabel>
-      <EmailInput
-        type='email'
-        id='email'
-        placeholder='Enter your email'
-        value={email}
-        onChange={handleChange}
-        isValid={isValid}
-      />
-      {!isValid && <ErrorText>Invalid email format</ErrorText>}
+      <InputSpace>
+        <InputLabel htmlFor='email'>Email</InputLabel>
+        <EmailInput
+          type='email'
+          id='email'
+          placeholder='Enter your email'
+          value={email}
+          onChange={handleChange}
+          isValid={isValid}
+        />
+      </InputSpace>
       <SendButton disabled={!isValid || email === ''} onClick={handleResetPassword}>
         Send reset link
       </SendButton>

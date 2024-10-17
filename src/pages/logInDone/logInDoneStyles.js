@@ -1,56 +1,82 @@
 import styled from 'styled-components';
 
-// Main container for both form and map
 export const PageContainer = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-`;
-
-// Form container
-export const ContactContainer = styled.div`
-  width: 50%;
-  padding: 2rem;
-  background-color: #f4f4f4;
-  margin: 2rem auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-`;
-
-// Title (h1)
-export const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #333;
-`;
-
-// Description (span or p)
-export const Description = styled.p`
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
-  text-align: center;
-`;
-
-// Input fields (text, email, phone)
-export const InputField = styled.input`
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
   box-sizing: border-box;
+  width: 100%;
+  gap: 100px;
+  background-color: #fdfdfd;
+  padding: 30px 130px 0px 130px;
+`;
+
+export const MainContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1140px;
+  height: 700px;
+  gap: 50px;
+`;
+
+export const TitleSpace = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const ContactContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 604px;
+  width: 545px;
+
+  gap: 40px;
+`;
+
+export const Title = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 7px;
+  font-family: 'Montserrat';
+  font-size: 54px;
+  font-weight: 700;
+`;
+
+export const Description = styled.div`
+  display: flex;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  width: 545px;
+  height: 48px;
+`;
+
+export const FormCon = styled.form`
+  display: flex;
+
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const InputField = styled.input`
+  width: 545px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid #e0e0e0;
+
   &:focus {
     border-color: #007bff;
     outline: none;
   }
 `;
 
-// Dropdown (select)
 export const Dropdown = styled.select`
   width: 100%;
   padding: 0.8rem;
@@ -65,20 +91,21 @@ export const Dropdown = styled.select`
   }
 `;
 
-// Options inside the dropdown
 export const Option = styled.option`
   font-size: 1rem;
 `;
 
-// Submit button
 export const SubmitButton = styled.button`
   width: 100%;
-  padding: 1rem;
-  font-size: 1.2rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
+  height: 50px;
+  padding: 12px 24px 12px 24px;
+  color: #ffffff;
+  background-color: #003459;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.5px;
+
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
@@ -86,11 +113,10 @@ export const SubmitButton = styled.button`
   }
 `;
 
-// Map container
 export const MapContainer = styled.div`
-  width: 100%;
-  height: 400px;
-  margin-top: 3rem;
+  width: 545px;
+  height: 700px;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   iframe {
     border-radius: 8px;
