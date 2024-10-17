@@ -307,3 +307,21 @@ export const Circle4 = styled.div`
 export const Circle5 = styled.div`
   color: #fff7ce;
 `;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+export const PageButton = styled.button`
+  background-color: ${({ isActive }) => (isActive ? '#6C63FF' : '#fff')};
+  color: ${({ isActive }) => (isActive ? '#fff' : '#000')};
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ddd;
+  }
+`;

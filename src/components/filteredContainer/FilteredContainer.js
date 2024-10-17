@@ -35,6 +35,8 @@ import {
   TitleConteiner,
   SubTitle,
   ArrowButtons2,
+  PaginationContainer,
+  PageButton,
 } from './filteredContainerStyles';
 import PetsData from '../../data/petsData/petsData.json';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +52,10 @@ const FilteredContainer = () => {
   const [maxPrice, setMaxPrice] = useState(null);
   const [filteredPets, setFilteredPets] = useState(PetsData); // დასაწყისში ყველა მონაცემი
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const petsPerPage = 15;
 
+  const totalPages = Math.ceil(filteredPets.length / petsPerPage);
   useEffect(() => {
     let updatedPets = PetsData;
 
@@ -86,6 +91,7 @@ const FilteredContainer = () => {
 
     // გაფილტრული მონაცემების განახლება
     setFilteredPets(updatedPets);
+    setCurrentPage(1);
     console.log('Final Filtered Pets:', updatedPets); // საბოლოო მონაცემები
   }, [filters, minPrice, maxPrice]);
 
@@ -113,6 +119,14 @@ const FilteredContainer = () => {
   const handlePetClick = petId => {
     navigate(`/productdetail/${petId}`);
   };
+
+  // Get pets for the current page
+  const indexOfLastPet = currentPage * petsPerPage;
+  const indexOfFirstPet = indexOfLastPet - petsPerPage;
+  const currentPets = filteredPets.slice(indexOfFirstPet, indexOfLastPet);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
     <FilterSpace>
@@ -294,7 +308,7 @@ const FilteredContainer = () => {
           </SortButton>
         </TitleCon>
         <CardContainer>
-          {filteredPets.slice(0, 15).map(pet => (
+          {currentPets.slice(0, 15).map(pet => (
             <Card key={pet.id} onClick={() => handlePetClick(pet.id)}>
               <PetImage src={pet.image} alt={pet.name} />
               <InfoCon>
@@ -311,6 +325,17 @@ const FilteredContainer = () => {
             </Card>
           ))}
         </CardContainer>
+        {/* Pagination */}
+        <PaginationContainer>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNumber => (
+            <PageButton
+              key={pageNumber}
+              onClick={() => paginate(pageNumber)}
+              isActive={currentPage === pageNumber}>
+              {pageNumber}
+            </PageButton>
+          ))}
+        </PaginationContainer>
       </RightSide>
     </FilterSpace>
   );
