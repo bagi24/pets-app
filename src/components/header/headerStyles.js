@@ -8,6 +8,8 @@ export const HeaderContainer = styled.div`
   width: 100%;
   gap: 404px;
   background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
+  @media (max-width: 414px) {
+  }
 `;
 
 export const NavCon = styled.div`
@@ -19,6 +21,13 @@ export const NavCon = styled.div`
   gap: 48px;
   width: 100%;
   padding: 30px 0px 30px 130px;
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px;
+  }
 `;
 
 export const AuthorizationCon = styled.div`
@@ -28,10 +37,16 @@ export const AuthorizationCon = styled.div`
   justify-content: center;
   gap: 14px;
   width: 100%;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const StyledLogo = styled.img`
   width: 120px;
+  @media (max-width: 414px) {
+    width: 100px;
+  }
 `;
 
 export const Span = styled.span`
@@ -44,6 +59,9 @@ export const Span = styled.span`
   text-align: left;
   &:hover {
     color: black;
+  }
+  @media (max-width: 414px) {
+    display: none;
   }
 `;
 
@@ -191,3 +209,63 @@ export const LogoutSpace = styled.div`
   gap: 18.48px;
   width: 100%;
 `;
+
+export const HamburgerIcon = styled.div`
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+
+  @media (min-width: 414px) {
+    display: none;
+  }
+`;
+
+export const SpanSpace = styled.div`
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+`;
+
+export const MenuOpenCon = styled.div`
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 49px;
+    background-color: #ffffff;
+    color: black;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index: 1011;
+    padding: 53px 82.5px 38px 0px;
+    margin: 0px;
+  }
+`;
+
+export const Content = styled.div`
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+`;
+
+export const SpanMob = styled.div`
+  font-family: 'SVN-Gilroy';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #003459;
+`;
+
+export const AuthorizationConMob = styled.div``;

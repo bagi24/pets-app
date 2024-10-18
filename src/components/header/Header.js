@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../../assets/images/logos/Frame.png';
 import georgianFlag from '../../assets/images/logos/geFlag.jpg';
 import englishFlag from '../../assets/images/logos/EnglishFlag.jpg';
+
 import { useNavigate } from 'react-router-dom';
 import {
   HeaderContainer,
@@ -21,6 +22,12 @@ import {
   LogOutSpan,
   LogOutTitle,
   LogoutSpace,
+  HamburgerIcon,
+  SpanSpace,
+  MenuOpenCon,
+  Content,
+  SpanMob,
+  AuthorizationConMob,
 } from './headerStyles';
 
 const Header = ({ name, setName, setLanguageTranslate }) => {
@@ -31,6 +38,7 @@ const Header = ({ name, setName, setLanguageTranslate }) => {
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLogOutOpen, setIsLogOutOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -51,14 +59,17 @@ const Header = ({ name, setName, setLanguageTranslate }) => {
 
   const handleHomeClick = () => {
     navigate('/');
+    setIsMenuOpen(false); // მენიუს დახურვა
   };
 
   const handleCategoryClick = () => {
     navigate('/category');
+    setIsMenuOpen(false); // მენიუს დახურვა
   };
 
   const handleContactClick = () => {
     navigate('/loginDone');
+    setIsMenuOpen(false); // მენიუს დახურვა
   };
 
   const toggleLanguage = (flag, abbreviation, langCode) => {
@@ -68,10 +79,21 @@ const Header = ({ name, setName, setLanguageTranslate }) => {
     setIsDropdownOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <NavCon>
         <StyledLogo src={Logo} alt='logo' />
+        <HamburgerIcon onClick={toggleMenu}>
+          <i class='fa-solid fa-bars'></i>
+        </HamburgerIcon>
         <Span onClick={handleHomeClick}>Home</Span>
         <Span onClick={handleCategoryClick}>Category</Span>
         <Span onClick={handleContactClick}>Contact</Span>
@@ -113,6 +135,55 @@ const Header = ({ name, setName, setLanguageTranslate }) => {
             </LogOutSpan>
           </LogoutSpace>
         </LogOutContainer>
+      )}
+
+      {isMenuOpen && (
+        <MenuOpenCon>
+          <span
+            onClick={handleClose}
+            style={{
+              position: 'absolute',
+              top: '21px',
+              left: '13px',
+              color: '#00171F',
+              width: '32px',
+              height: '32px',
+              cursor: 'pointer',
+            }}>
+            X
+          </span>
+          <Content>
+            <SpanSpace>
+              <SpanMob onClick={handleHomeClick}>Home</SpanMob>
+              <SpanMob onClick={handleCategoryClick}>Category</SpanMob>
+              <SpanMob onClick={handleContactClick}>Contact</SpanMob>
+            </SpanSpace>
+            <AuthorizationConMob>
+              <Button onClick={handleJoin}>{name}</Button>
+              <LanguageCon>
+                <LanguageSelector onClick={toggleDropdown}>
+                  <FlagImage src={language.flag} alt='' />
+                  <Abbreviation>{language.abbreviation}</Abbreviation>
+                  <i className='fa-solid fa-angle-down'></i>
+                </LanguageSelector>
+
+                {isDropdownOpen && (
+                  <LanguageDropdown>
+                    <DropdownItem onClick={() => toggleLanguage(englishFlag, 'EN', 'EN')}>
+                      <FlagImage src={englishFlag} alt='EN Flag' />
+                      <Abbreviation>EN</Abbreviation>
+                    </DropdownItem>
+                    <DropdownItem onClick={() => toggleLanguage(georgianFlag, 'GE', 'GE')}>
+                      <FlagImage src={georgianFlag} alt='GE Flag' />
+                      <Abbreviation>GE</Abbreviation>
+                    </DropdownItem>
+                  </LanguageDropdown>
+                )}
+              </LanguageCon>
+            </AuthorizationConMob>
+          </Content>
+          <StyledLogo src={Logo} alt='logo' />
+        </MenuOpenCon>
       )}
     </HeaderContainer>
   );

@@ -20,6 +20,9 @@ export const ContentContainer = styled.div`
 
   padding: 80px 0px 0px 130px;
   width: 100%;
+  @media (max-width: 414px) {
+    padding: 16px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -30,6 +33,12 @@ export const Title = styled.h1`
   margin: 0px;
   position: relative;
   color: #002a48;
+  @media (max-width: 414px) {
+    font-family: 'SVN-Gilroy';
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 60px;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -40,6 +49,12 @@ export const Subtitle = styled.h2`
   margin: 0px;
   margin-bottom: 4px;
   color: #000000;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+  }
 `;
 
 export const Description = styled.p`
@@ -52,6 +67,12 @@ export const Description = styled.p`
   margin: 0px;
   margin-bottom: 34px;
   color: #242b33;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -111,6 +132,14 @@ export const LogoImage = styled.img`
   top: -15px;
   left: 500px;
   z-index: 1001;
+  @media (max-width: 414px) {
+    width: 414px;
+    height: 300px;
+    position: absolute;
+    top: 295px;
+    left: 0px;
+    z-index: 1001;
+  }
 `;
 
 export const Rectangle1 = styled.div`
@@ -124,6 +153,18 @@ export const Rectangle1 = styled.div`
   background-color: #f7dba7;
   transform: rotate(-63deg);
   z-index: 1000;
+  @media (max-width: 414px) {
+    width: 335px;
+    height: 335px;
+    position: absolute;
+    top: 350px;
+    left: 160px;
+    border-radius: 50px;
+    opacity: 1;
+    background-color: #f7dba7;
+    transform: rotate(-65deg);
+    z-index: 1000;
+  }
 `;
 
 export const Rectangle2 = styled.div`
@@ -136,6 +177,17 @@ export const Rectangle2 = styled.div`
   opacity: 1;
   background-color: #003459;
   transform: rotate(-78deg);
+  @media (max-width: 414px) {
+    width: 335px;
+    height: 335px;
+    position: absolute;
+    top: 380px;
+    left: 70px;
+    border-radius: 50px;
+    opacity: 1;
+    background-color: #003459;
+    transform: rotate(-90deg);
+  }
 `;
 
 export const Rectangle4 = styled.div`
@@ -148,6 +200,9 @@ export const Rectangle4 = styled.div`
   opacity: 1;
   background-color: #f7dba7;
   transform: rotate(-58deg);
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const Rectangle5 = styled.div`
@@ -161,6 +216,9 @@ export const Rectangle5 = styled.div`
   background-color: #f7dba7;
   transform: rotate(-35deg);
   opacity: 40%;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const Rectangle6 = styled.div`
@@ -174,6 +232,12 @@ export const Rectangle6 = styled.div`
   background-color: #003459;
   transform: rotate(-45deg);
   z-index: 1000;
+  @media (max-width: 414px) {
+    width: 12.5px;
+    height: 12.5px;
+    top: 78px;
+    left: 300px;
+  }
 `;
 
 export const Rectangle7 = styled.div`
@@ -187,6 +251,12 @@ export const Rectangle7 = styled.div`
   background-color: #f7dba7;
   transform: rotate(-25deg);
   z-index: 999;
+  @media (max-width: 414px) {
+    width: 15.93px;
+    height: 15.93px;
+    top: 70px;
+    left: 310px;
+  }
 `;
 
 export const Rectangle8 = styled.div`
@@ -199,4 +269,10 @@ export const Rectangle8 = styled.div`
   opacity: 1;
   background-color: #f7dba7;
   transform: rotate(-50deg);
+  @media (max-width: 414px) {
+    width: 15.93px;
+    height: 15.93px;
+    top: 65px;
+    left: 340px;
+  }
 `;

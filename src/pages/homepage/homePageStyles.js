@@ -12,4 +12,16 @@ export const HomePageConStructure = styled.div`
   position: relative;
   overflow: hidden;
   background-color: #fdfdfd;
+
+  @media (max-width: 414px) {
+    padding: 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fdfdfd;
+  }
 `;
