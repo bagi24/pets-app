@@ -11,6 +11,14 @@ export const FooterContainer = styled.footer`
   height: 440px;
 
   border-radius: 40px 40px 0px 0px;
+  @media (max-width: 414px) {
+    width: 382px;
+    align-items: start;
+    justify-content: start;
+    padding: 0px 16px 40px 0px;
+
+    border-radius: 16px;
+  }
 `;
 
 export const TitleCon = styled.div`
@@ -23,6 +31,16 @@ export const TitleCon = styled.div`
   gap: 20px;
   margin-top: 80px;
   border-radius: 16px;
+  @media (max-width: 414px) {
+    width: 382px;
+    height: 244px;
+    padding: 16px;
+    margin: 0px;
+    border-radius: 16px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.h2`
@@ -30,6 +48,12 @@ export const Title = styled.h2`
   font-size: 24px;
   line-height: 36px;
   color: #fdfdfd;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+  }
 `;
 
 export const InputCon = styled.div`
@@ -42,6 +66,13 @@ export const InputCon = styled.div`
   gap: 12px;
   border-radius: 14px;
   background-color: #ffffff;
+  @media (max-width: 414px) {
+    width: 350px;
+    height: 132px;
+    padding: 12px;
+    flex-direction: column;
+    border-radius: 14px;
+  }
 `;
 
 export const Input = styled.input`
@@ -51,6 +82,13 @@ export const Input = styled.input`
   gap: 10px;
   border-radius: 8px;
   border: 1px solid #99a2a5;
+
+  @media (max-width: 414px) {
+    width: 326px;
+    height: 48px;
+
+    border-radius: 8px;
+  }
 `;
 
 export const Subcribe = styled.button`
@@ -66,6 +104,10 @@ export const Subcribe = styled.button`
   &:hover {
     background-color: #007ba1;
   }
+
+  @media (max-width: 414px) {
+    width: 100%;
+  }
 `;
 
 export const NavCon = styled.div`
@@ -76,11 +118,28 @@ export const NavCon = styled.div`
   width: 1180px;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @media (max-width: 414px) {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+    gap: 20px;
+  }
 `;
 
 export const NavTitleCon = styled.div`
   display: flex;
   gap: 40px;
+
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
 `;
 
 export const Span = styled.span`
@@ -99,6 +158,13 @@ export const Span = styled.span`
 export const SocMediaCon = styled.div`
   display: flex;
   gap: 40px;
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
 `;
 
 export const SocSpan = styled.span`
@@ -119,6 +185,14 @@ export const EndPointCon = styled.div`
 
   border-top: 1px solid #ffffff33;
   padding: 40px 130px 40px;
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+  }
 `;
 
 export const Reserved = styled.span`
@@ -126,6 +200,9 @@ export const Reserved = styled.span`
   font-size: 14px;
   line-height: 20px;
   color: #667479;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const LogoImg = styled.img`
@@ -151,3 +228,5 @@ export const ServiceSpan = styled.span`
     color: #00a7e7;
   }
 `;
+
+export const Reserved2 = styled.span``;

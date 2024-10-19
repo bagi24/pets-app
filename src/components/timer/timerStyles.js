@@ -6,6 +6,10 @@ export const CountdownContainer = styled.div`
   margin-bottom: 71px;
 
   width: 100%;
+  @media (max-width: 414px) {
+    margin: 0px;
+    display: none;
+  }
 `;
 
 export const Title = styled.h1`

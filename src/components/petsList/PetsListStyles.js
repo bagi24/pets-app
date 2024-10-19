@@ -18,6 +18,13 @@ export const HeaderTitleCon = styled.div`
   flex-direction: column;
   padding: 60px 0px 28px 110px;
   gap: 2px;
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    padding: 20px;
+  }
 `;
 
 export const HeaderTitle = styled.div`
@@ -40,6 +47,9 @@ export const ButtonCon = styled.div`
   align-items: center;
   justify-content: center;
   padding: 78px 126px 28px 0px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const ViewMoreButton = styled.button`
@@ -61,6 +71,9 @@ export const ViewMoreButton = styled.button`
   &:hover {
     background-color: lightblue;
   }
+  @media (max-width: 414px) {
+    width: 100%;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -69,6 +82,11 @@ export const CardContainer = styled.div`
   gap: 20px;
   justify-content: center;
   width: 100%;
+  @media (max-width: 414px) {
+    margin: 0px;
+    padding: 0px;
+    gap: 10px;
+  }
 `;
 
 export const Card = styled.div`
@@ -87,6 +105,14 @@ export const Card = styled.div`
 
   &:hover {
     box-shadow: 0px 4px 28px -2px #00000024;
+  }
+  @media (max-width: 414px) {
+    width: 185px;
+    height: 317px;
+
+    padding: 8px;
+
+    border-radius: 12px;
   }
 `;
 
@@ -126,6 +152,10 @@ export const PetImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
   padding: 8px;
+  @media (max-width: 414px) {
+    width: 169px;
+    height: 169px;
+  }
 `;
 
 export const PetName = styled.h2`
@@ -153,4 +183,14 @@ export const Price = styled.p`
   color: #00171f;
   font-weight: bold;
   margin: 0px;
+`;
+
+export const ButtonCon2 = styled.div`
+  display: none;
+  @media (max-width: 414px) {
+    display: block;
+    width: 100%;
+    padding-right: 10px;
+    cursor: pointer;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import keyframes from 'styled-components';
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -141,6 +142,19 @@ export const LogoImage = styled.img`
     z-index: 1001;
   }
 `;
+const strongShake = keyframes`
+    0% { transform: rotate(-63deg) translateX(0); }
+  10% { transform: rotate(-63deg) translateX(-20px); }
+  20% { transform: rotate(-63deg) translateX(20px); }
+  30% { transform: rotate(-63deg) translateY(-20px); }
+  40% { transform: rotate(-63deg) translateX(20px); }
+  50% { transform: rotate(-63deg) translateX(-20px); }
+  60% { transform: rotate(-63deg) translateX(20px); }
+  70% { transform: rotate(-63deg) translateX(-10px); }
+  80% { transform: rotate(-63deg) translateX(10px); }
+  90% { transform: rotate(-63deg) translateX(-5px); }
+  100% { transform: rotate(-63deg) translateX(0); }
+`;
 
 export const Rectangle1 = styled.div`
   width: 635px;
@@ -153,6 +167,9 @@ export const Rectangle1 = styled.div`
   background-color: #f7dba7;
   transform: rotate(-63deg);
   z-index: 1000;
+  animation: ${strongShake} 2s ease-in-out 3;
+  animation-iteration-count: 3;
+  /* animation: ${props => (props.shake ? `${strongShake} 3s ease-in-out 3` : 'none')}; */
   @media (max-width: 414px) {
     width: 335px;
     height: 335px;
@@ -177,6 +194,7 @@ export const Rectangle2 = styled.div`
   opacity: 1;
   background-color: #003459;
   transform: rotate(-78deg);
+
   @media (max-width: 414px) {
     width: 335px;
     height: 335px;

@@ -17,6 +17,7 @@ import {
   LogoImg,
   Service,
   ServiceSpan,
+  Reserved2,
 } from './footerStyles';
 
 const Footer = () => {
@@ -63,6 +64,7 @@ const Footer = () => {
           <ServiceSpan>Terms of Service </ServiceSpan>
           <ServiceSpan>Privacy Policy</ServiceSpan>
         </Service>
+        <Reserved2>© 2022 Monito. All rights reserved.</Reserved2>
       </EndPointCon>
     </FooterContainer>
   );

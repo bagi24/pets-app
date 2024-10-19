@@ -19,6 +19,7 @@ import {
   Age,
   ButtonCon,
   ViewMoreButton,
+  ButtonCon2,
 } from './PetsListStyles';
 
 const PetsList = () => {
@@ -58,11 +59,17 @@ const PetsList = () => {
                 </Dot>
                 <Age>Age: {pet.age}</Age>
               </PetInfo>
-              <Price>{pet.price}</Price>
+              <Price>{pet.price}USD</Price>
             </InfoCon>
           </Card>
         ))}
       </CardContainer>
+      <ButtonCon2>
+        <ViewMoreButton onClick={handleCategory}>
+          View more
+          <i className='fa-solid fa-angle-right'></i>
+        </ViewMoreButton>
+      </ButtonCon2>
     </ListContainer>
   );
 };

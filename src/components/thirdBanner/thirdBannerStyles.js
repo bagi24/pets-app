@@ -13,6 +13,9 @@ export const ThirdBannerCon = styled.div`
   position: relative;
 
   overflow: hidden;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const ContentContainer = styled.div`

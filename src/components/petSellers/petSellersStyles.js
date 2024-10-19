@@ -8,6 +8,9 @@ export const HeaderCon = styled.div`
   justify-content: space-between;
 
   margin-bottom: 20px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const HeaderTitleCon = styled.div`
@@ -67,6 +70,9 @@ export const PetSellersDataCon = styled.div`
   justify-content: center;
   gap: 30px;
   margin-bottom: 40px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const ImageCon = styled.div`

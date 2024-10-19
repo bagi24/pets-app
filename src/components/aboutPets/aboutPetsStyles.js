@@ -6,6 +6,9 @@ export const AboutPetsCon = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 60px;
+  @media (max-width: 414px) {
+    margin: 0px;
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -21,6 +24,9 @@ export const HeaderTitleCon = styled.div`
   flex-direction: column;
   padding: 60px 0px 28px 0px;
   gap: 2px;
+  @media (max-width: 414px) {
+    padding: 20px;
+  }
 `;
 
 export const HeaderTitle = styled.div`
@@ -43,6 +49,9 @@ export const ButtonCon = styled.div`
   align-items: center;
   justify-content: center;
   padding: 78px 0px 28px 0px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const ArrowButton = styled.button`
@@ -66,6 +75,15 @@ export const CardContainer = styled.div`
   gap: 20px;
   justify-content: center;
   width: 100%;
+  @media (max-width: 414px) {
+    /* მობილურისთვის მხოლოდ ერთი ქარდი */
+    flex-direction: column;
+    gap: 0; /* მანძილი ქარდებს შორის შემცირდება */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: nowrap;
+  }
 `;
 
 export const Card = styled.div`

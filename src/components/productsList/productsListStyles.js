@@ -4,6 +4,9 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 60px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const HeaderContainer = styled.div`

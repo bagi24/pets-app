@@ -13,6 +13,17 @@ export const SecondaryBannerCon = styled.div`
   position: relative;
 
   overflow: hidden;
+  @media (max-width: 414px) {
+    align-items: flex-start;
+    justify-content: start;
+    width: 382px;
+    height: 640px;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -23,6 +34,11 @@ export const ContentContainer = styled.div`
   padding-right: 130px;
   width: 100%;
   z-index: 1001;
+  @media (max-width: 414px) {
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -33,6 +49,12 @@ export const Title = styled.h1`
   margin: 0px;
   position: relative;
   color: #003459;
+  @media (max-width: 414px) {
+    font-family: 'SVN-Gilroy';
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 54px;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -43,6 +65,12 @@ export const Subtitle = styled.h2`
   margin: 0px;
   margin-bottom: 4px;
   color: #003459;
+  @media (max-width: 414px) {
+    font-family: ' SF Pro Display';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+  }
 `;
 
 export const Description = styled.p`
@@ -58,6 +86,14 @@ export const Description = styled.p`
 
   width: 394px;
   height: 54px;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    width: 342px;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -118,6 +154,9 @@ export const LogoImage = styled.img`
   top: 38px;
   left: 0px;
   z-index: 1001;
+  @media (max-width: 414px) {
+    top: 360px;
+  }
 `;
 
 export const Rectangle = styled.div`
@@ -131,6 +170,13 @@ export const Rectangle = styled.div`
   background-color: #fceed5;
   transform: rotate(-150deg);
   z-index: 1000;
+  @media (max-width: 414px) {
+    width: 605px;
+    height: 635px;
+    top: -260px;
+    left: 0px;
+    transform: rotate(-160deg);
+  }
 `;
 
 export const Rectangle2 = styled.div`
@@ -144,4 +190,10 @@ export const Rectangle2 = styled.div`
   background-color: #002a48;
   transform: rotate(-60deg);
   z-index: 1000;
+  @media (max-width: 414px) {
+    width: 605px;
+    height: 635px;
+    top: 570px;
+    left: -100px;
+  }
 `;

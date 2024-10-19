@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import {
   HeroContainer,
   Title,
@@ -36,6 +37,13 @@ const HeroBanner = ({ languageTranslate }) => {
   };
 
   const { title, subtitle, description } = translations[languageTranslate];
+
+  const [shake, setShake] = useState(false);
+
+  useEffect(() => {
+    setShake(true); // გააქტიურე ანიმაცია რეფრეშისას
+  }, []);
+
   return (
     <HeroContainer>
       <ContentContainer>
@@ -52,7 +60,7 @@ const HeroBanner = ({ languageTranslate }) => {
         </ButtonContainer>
       </ContentContainer>
       <LogoImage src={Logo} alt='Logo' />
-      <Rectangle1> </Rectangle1>
+      <Rectangle1 shake={shake}> </Rectangle1>
       <Rectangle2> </Rectangle2>
       <Rectangle5> </Rectangle5>
       <Rectangle6> </Rectangle6>
