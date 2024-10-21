@@ -42,8 +42,11 @@ export const TitleConteiner = styled.div`
 `;
 
 export const FilterButtonMob = styled.div`
-  display: flex;
-  gap: 10px;
+  display: none;
+  @media (max-width: 414px) {
+    display: flex;
+    gap: 10px;
+  }
 `;
 
 export const SubTitle = styled.div`

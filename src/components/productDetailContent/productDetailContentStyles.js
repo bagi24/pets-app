@@ -17,6 +17,9 @@ export const LeftSide = styled.div`
   gap: 17px;
   padding-left: 20px;
   padding-top: 22px;
+  @media (max-width: 414px) {
+    padding: 0px;
+  }
 `;
 
 export const ProfileImg = styled.img`
@@ -24,6 +27,11 @@ export const ProfileImg = styled.img`
   height: 476px;
   object-fit: cover;
   border-radius: 10px;
+
+  @media (max-width: 414px) {
+    width: 414px;
+    height: 523px;
+  }
 `;
 
 export const StatusInfo = styled.div`
@@ -33,6 +41,10 @@ export const StatusInfo = styled.div`
   background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
   width: 100%;
   gap: 27px;
+
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const HealthSpan = styled.span`
@@ -62,6 +74,9 @@ export const SocmediaShareCon = styled.div`
   align-items: center;
   justify-content: center;
   gap: 21px;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const Share = styled.div`
@@ -93,6 +108,10 @@ export const RightSide = styled.div`
   padding-right: 49px;
 
   padding-top: 22px;
+  @media (max-width: 414px) {
+    width: 100%;
+    padding: 0px;
+  }
 `;
 
 export const NavCon = styled.div`
@@ -226,6 +245,9 @@ export const ProductContent = styled.div`
   justify-content: flex-start;
   gap: 34px;
   border: 1px solid #ebeeef;
+  @media (max-width: 414px) {
+    flex-direction: column;
+  }
 `;
 
 // Styled Components
@@ -269,6 +291,10 @@ export const MorePuppies = styled.div`
   justify-content: flex-start;
 
   gap: 28px;
+
+  @media (max-width: 414px) {
+    width: 100%;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -276,6 +302,11 @@ export const CardContainer = styled.div`
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  @media (max-width: 414px) {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 `;
 
 export const Card = styled.div`
@@ -294,6 +325,13 @@ export const Card = styled.div`
 
   &:hover {
     box-shadow: 0px 4px 28px -2px #00000024;
+  }
+
+  @media (max-width: 414px) {
+    width: 185px;
+    height: 317px;
+
+    border-radius: 12px;
   }
 `;
 

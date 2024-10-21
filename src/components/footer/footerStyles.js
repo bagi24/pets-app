@@ -6,20 +6,15 @@ export const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
   background: linear-gradient(102.87deg, #fceed5 6.43%, #fceed5 78.33%, #ffe7ba 104.24%);
-
   width: 1440px;
   height: 440px;
 
   border-radius: 40px 40px 0px 0px;
   @media (max-width: 414px) {
-    /* width: 382px;
-    align-items: start;
-    justify-content: start;
-    padding: 0px 16px 40px 0px;
-
-    border-radius: 16px; */
-
-    width: 414px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 598px;
     border-radius: 20px 20px 0px 0px;
   }
@@ -36,9 +31,9 @@ export const TitleCon = styled.div`
   margin-top: 80px;
   border-radius: 16px;
   @media (max-width: 414px) {
-    width: 382px;
+    width: 90%;
     height: 244px;
-    padding: 16px;
+    padding-left: 20px;
     margin: 0px;
     border-radius: 16px;
     align-items: start;
@@ -53,10 +48,14 @@ export const Title = styled.h2`
   line-height: 36px;
   color: #fdfdfd;
   @media (max-width: 414px) {
+    display: flex;
+    align-items: start;
+    justify-content: center;
     font-family: 'SF Pro Display';
     font-size: 20px;
     font-weight: 700;
     line-height: 32px;
+    margin: 0px;
   }
 `;
 
@@ -73,7 +72,8 @@ export const InputCon = styled.div`
   @media (max-width: 414px) {
     width: 350px;
     height: 132px;
-    padding: 12px;
+    padding: 0px;
+
     flex-direction: column;
     border-radius: 14px;
   }
