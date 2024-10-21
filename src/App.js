@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+
 import HomePage from './pages/homepage/HomePage';
 import Category from './pages/category/Category';
 import ProductDetail from './pages/productDetail/ProductDetail';

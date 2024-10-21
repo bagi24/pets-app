@@ -32,7 +32,6 @@ export const ProductDetailContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
   background-color: #fdfdfd;
-
   gap: 20px;
 
   @media (max-width: 414px) {
