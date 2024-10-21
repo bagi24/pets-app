@@ -12,12 +12,16 @@ export const FooterContainer = styled.footer`
 
   border-radius: 40px 40px 0px 0px;
   @media (max-width: 414px) {
-    width: 382px;
+    /* width: 382px;
     align-items: start;
     justify-content: start;
     padding: 0px 16px 40px 0px;
 
-    border-radius: 16px;
+    border-radius: 16px; */
+
+    width: 414px;
+    height: 598px;
+    border-radius: 20px 20px 0px 0px;
   }
 `;
 

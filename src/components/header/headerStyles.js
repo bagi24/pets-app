@@ -146,6 +146,8 @@ export const Rectangle3 = styled.div`
   z-index: 1000;
 `;
 
+//
+
 export const LogOutContainer = styled.div`
   position: absolute;
   top: 80px;

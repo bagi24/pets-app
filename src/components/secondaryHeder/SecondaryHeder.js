@@ -17,9 +17,22 @@ import {
   LanguageCon,
   NavCon,
   ArrowDown,
+  HamburgerIcon,
+  MenuOpenCon,
+  Content,
+  SpanSpace,
+  SpanMob,
+  AuthorizationConMob,
+  LogOutContainer,
+  LogOutTitle,
+  LogoutSpace,
+  LogOutSpan,
+  ButtonMob,
+  LanguageSelectorMob,
+  LanguageDropdownMob,
 } from './secondaryHeaderStyles';
 
-const SecondaryHeder = () => {
+const SecondaryHeder = ({ name, setName }) => {
   const navigate = useNavigate();
   const [language, setLanguage] = useState({
     flag: georgianFlag,
@@ -27,6 +40,8 @@ const SecondaryHeder = () => {
   });
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLogOutOpen, setIsLogOutOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLanguage = (flag, abbreviation) => {
     setLanguage({ flag, abbreviation });
@@ -38,23 +53,44 @@ const SecondaryHeder = () => {
   };
 
   const handleJoin = () => {
-    navigate('/login');
+    if (name === 'Join the community') {
+      navigate('/login');
+    } else {
+      setIsLogOutOpen(true);
+    }
+  };
+
+  const handleLogOut = () => {
+    setName('Join the community');
+    setIsLogOutOpen(false);
   };
 
   const handleHome = () => {
     navigate('/');
+    setIsMenuOpen(false);
   };
   const handleCategory = () => {
     navigate('/category');
+    setIsMenuOpen(false);
   };
   const handleContact = () => {
     navigate('/loginDone');
+    setIsMenuOpen(false);
+  };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleClose = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <HeaderContainer>
       <NavCon>
         <StyledLogo src={Logo} alt='logo' />
+        <HamburgerIcon onClick={toggleMenu}>
+          <i class='fa-solid fa-bars'></i>
+        </HamburgerIcon>
         <Span onClick={handleHome}>Home</Span>
         <Span onClick={handleCategory}>Category</Span>
         <Span onClick={handleContact}>Contact</Span>
@@ -70,6 +106,19 @@ const SecondaryHeder = () => {
               <i class='fa-solid fa-angle-down'></i>
             </ArrowDown>
           </LanguageSelector>
+          {isLogOutOpen && (
+            <LogOutContainer>
+              <LogOutTitle>{name}</LogOutTitle>
+              <LogoutSpace>
+                <LogOutSpan>
+                  <i class='fa-regular fa-user'></i> Profile
+                </LogOutSpan>
+                <LogOutSpan onClick={handleLogOut}>
+                  <i class='fa-solid fa-right-from-bracket'></i> Log Out
+                </LogOutSpan>
+              </LogoutSpace>
+            </LogOutContainer>
+          )}
 
           {isDropdownOpen && (
             <LanguageDropdown>
@@ -85,6 +134,55 @@ const SecondaryHeder = () => {
           )}
         </LanguageCon>
       </AuthorizationCon>
+
+      {isMenuOpen && (
+        <MenuOpenCon>
+          <span
+            onClick={handleClose}
+            style={{
+              position: 'absolute',
+              top: '21px',
+              left: '13px',
+              color: '#00171F',
+              width: '32px',
+              height: '32px',
+              cursor: 'pointer',
+            }}>
+            X
+          </span>
+          <Content>
+            <SpanSpace>
+              <SpanMob onClick={handleHome}>Home</SpanMob>
+              <SpanMob onClick={handleCategory}>Category</SpanMob>
+              <SpanMob onClick={handleContact}>Contact</SpanMob>
+            </SpanSpace>
+            <AuthorizationConMob>
+              <ButtonMob onClick={handleJoin}>{name}</ButtonMob>
+              <LanguageCon>
+                <LanguageSelectorMob onClick={toggleDropdown}>
+                  <FlagImage src={language.flag} alt='' />
+                  <Abbreviation>{language.abbreviation}</Abbreviation>
+                  <i className='fa-solid fa-angle-down'></i>
+                </LanguageSelectorMob>
+
+                {isDropdownOpen && (
+                  <LanguageDropdownMob>
+                    <DropdownItem onClick={() => toggleLanguage(englishFlag, 'EN', 'EN')}>
+                      <FlagImage src={englishFlag} alt='EN Flag' />
+                      <Abbreviation>EN</Abbreviation>
+                    </DropdownItem>
+                    <DropdownItem onClick={() => toggleLanguage(georgianFlag, 'GE', 'GE')}>
+                      <FlagImage src={georgianFlag} alt='GE Flag' />
+                      <Abbreviation>GE</Abbreviation>
+                    </DropdownItem>
+                  </LanguageDropdownMob>
+                )}
+              </LanguageCon>
+            </AuthorizationConMob>
+          </Content>
+          <StyledLogo src={Logo} alt='logo' />
+        </MenuOpenCon>
+      )}
     </HeaderContainer>
   );
 };

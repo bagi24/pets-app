@@ -7,6 +7,13 @@ export const FilterSpace = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const TitleCon = styled.div`
@@ -14,6 +21,13 @@ export const TitleCon = styled.div`
   align-items: start;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 90px;
+    padding-bottom: 10px;
+  }
 `;
 
 export const TitleConteiner = styled.div`
@@ -21,6 +35,15 @@ export const TitleConteiner = styled.div`
   align-items: center;
   justify-content: center;
   gap: 17px;
+
+  @media (max-width: 414px) {
+    display: none;
+  }
+`;
+
+export const FilterButtonMob = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 export const SubTitle = styled.div`
@@ -67,6 +90,9 @@ export const LeftSide = styled.div`
   gap: 14px;
   max-width: 252px;
   width: 100%;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const FilterSearchArea = styled.div`
@@ -81,6 +107,13 @@ export const RightSide = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 14px;
+  @media (max-width: 414px) {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0px;
+    padding-left: 10px;
+  }
 `;
 
 export const CheckboxGroup = styled.div`
@@ -194,10 +227,18 @@ export const ArrowButton = styled.button`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* სივრცე ქარდებს შორის */
-  justify-content: flex-start; /* ქარდების განლაგება */
+  gap: 20px;
+  justify-content: flex-start;
   width: 100%;
-  max-width: 100%; /* მაქსიმალური სიგანე 100% */
+  max-width: 100%;
+
+  @media (max-width: 414px) {
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    /* flex-wrap: wrap;
+    flex-basis: calc(50% - 10px); */
+  }
 `;
 
 export const Card = styled.div`
@@ -205,8 +246,8 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 280px; /* ფიქსირებული სიგანე */
-  height: 378px; /* სიმაღლე */
+  width: 280px;
+  height: 378px;
   padding: 8px 8px 0px 8px;
   border-radius: 12px;
   background-color: #fff;
@@ -216,6 +257,12 @@ export const Card = styled.div`
 
   &:hover {
     box-shadow: 0px 4px 28px -2px #00000024;
+  }
+
+  @media (max-width: 414px) {
+    width: 185px;
+    height: 317px;
+    padding: 0px;
   }
 `;
 
@@ -233,6 +280,13 @@ export const Gene = styled.span`
   font-family: 'SF Pro Display';
   font-size: 12px;
   line-height: 18px;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: left;
+  }
 `;
 
 export const Dot = styled.i`
@@ -255,6 +309,12 @@ export const PetImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
   padding: 8px;
+
+  @media (max-width: 414px) {
+    width: 169px;
+    height: 169px;
+    padding: 0px;
+  }
 `;
 
 export const PetName = styled.h2`
@@ -263,6 +323,12 @@ export const PetName = styled.h2`
   line-height: 24px;
   color: #00171f;
   margin: 0px;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+  }
 `;
 
 export const PetInfo = styled.p`
@@ -282,6 +348,13 @@ export const Price = styled.p`
   color: #00171f;
   font-weight: bold;
   margin: 0px;
+  @media (max-width: 414px) {
+    font-family: 'SF Pro Display';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+  }
 `;
 
 export const Circle = styled.div`

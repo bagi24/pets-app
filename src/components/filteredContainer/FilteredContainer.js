@@ -37,6 +37,7 @@ import {
   ArrowButtons2,
   PaginationContainer,
   PageButton,
+  FilterButtonMob,
 } from './filteredContainerStyles';
 import PetsData from '../../data/petsData/petsData.json';
 import { useNavigate } from 'react-router-dom';
@@ -306,6 +307,10 @@ const FilteredContainer = () => {
           <SortButton>
             Sort by: Popular <i className='fa-solid fa-angle-down'></i>
           </SortButton>
+          <FilterButtonMob>
+            <i class='fa-solid fa-filter'></i>
+            Filter
+          </FilterButtonMob>
         </TitleCon>
         <CardContainer>
           {currentPets.slice(0, 15).map(pet => (
